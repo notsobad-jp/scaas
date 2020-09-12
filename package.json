@@ -1,0 +1,25 @@
+{
+  "name": "nextjs",
+  "version": "4.0.0",
+  "private": true,
+  "dependencies": {
+    "chrome-aws-lambda": "^5.2.1",
+    "next": "latest",
+    "next-transpile-modules": "^3.3.0",
+    "puppeteer-core": "^5.2.1",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "browser": {
+    "fs": false
+  },
+  "devDependencies": {
+    "puppeteer": "^5.2.1"
+  }
+}
