@@ -10,6 +10,11 @@
     "react": "latest",
     "react-dom": "latest"
   },
+  "devDependencies": {
+    "puppeteer": "^5.2.1",
+    "autoprefixer": "^9.8.0",
+    "tailwindcss": "^1.4.6"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -18,8 +23,5 @@
   },
   "browser": {
     "fs": false
-  },
-  "devDependencies": {
-    "puppeteer": "^5.2.1"
   }
 }
