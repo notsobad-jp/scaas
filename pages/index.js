@@ -43,7 +43,7 @@ export default function Index() {
             <img className="object-cover object-center rounded" alt="hero" src="/images/b0312.png" />
           </div>
         </div>
-        <div className="absolute w-full h-full opacity-50 top-0 left-0" style={{zIndex: '-1', backgroundImage: 'url(/images/memphis-colorful.png)'}}></div>
+        <div className="absolute w-full h-full opacity-25 top-0 left-0" style={{zIndex: '-1', backgroundImage: 'url(/images/memphis-colorful.png)'}}></div>
       </section>
 
       <Example />
