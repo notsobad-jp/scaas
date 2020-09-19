@@ -1,4 +1,4 @@
-export default function Feature() {
+export default function() {
   return (
     <section id="feature" className="text-gray-700 body-font">
       <div className="container px-5 py-24 mx-auto">

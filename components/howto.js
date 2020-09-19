@@ -1,4 +1,4 @@
-export default function Howto() {
+export default function() {
   return (
     <section id="option" className="text-gray-700 body-font">
       <div className="container px-5 py-16 mx-auto">
