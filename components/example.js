@@ -9,7 +9,7 @@ export default function() {
 
   return (
     <section className="text-gray-700 body-font bg-gray-300">
-      <div className="container px-5 py-12 mt-8 mb-16 mx-auto">
+      <div className="container px-5 py-12 mb-16 mx-auto">
         <div className="flex flex-col text-center w-full mb-4">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">さっそく試してみる</h1>
         </div>

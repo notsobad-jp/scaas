@@ -6,7 +6,8 @@ import Price from '../components/price'
 export default function Index() {
   return (
     <div>
-      <header className="text-gray-700 body-font">
+
+      <header className="absolute w-full text-gray-700 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <img src="/images/logo.png" alt="" style={{width: 40}} />
@@ -22,8 +23,8 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="text-gray-700 body-font">
-        <div className="container mx-auto flex px-5 pt-4 pb-0 md:flex-row flex-col items-center">
+      <section className="text-gray-700 body-font relative">
+        <div className="container mx-auto flex px-5 pt-24 pb-8 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">
               スクリーンショットを、シンプルに。
@@ -42,6 +43,7 @@ export default function Index() {
             <img className="object-cover object-center rounded" alt="hero" src="/images/b0312.png" />
           </div>
         </div>
+        <div className="absolute w-full h-full opacity-50 top-0 left-0" style={{zIndex: '-1', backgroundImage: 'url(/images/memphis-colorful.png)'}}></div>
       </section>
 
       <Example />
