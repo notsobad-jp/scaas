@@ -1,7 +1,7 @@
 export default function() {
   return (
     <section id="option" className="text-gray-700 body-font">
-      <div className="container px-5 py-16 mx-auto">
+      <div className="container px-5 pt-8 sm:pt-24 pb-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-8">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">使い方</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
@@ -10,7 +10,7 @@ export default function() {
             またURLにオプションを追加することで、より詳細な設定が可能です。
           </p>
         </div>
-        <div className="bg-gray-100 px-4 sm:px-8 py-4 rounded mb-12">
+        <div className="bg-gray-100 px-4 sm:px-8 py-4 rounded mb-12 break-all">
           https://scaas.vercel.app/api?url=
           <span className="text-red-600 font-bold">https://example.com</span>
         </div>
@@ -55,13 +55,13 @@ export default function() {
               </tr>
             </tbody>
           </table>
+        </div>
 
-          <div className="bg-gray-100 px-4 sm:px-8 py-4 rounded mb-12">
-            例：https://scaas.vercel.app/api?url=https://example.com
-            <span className="text-red-600 font-bold">
-              &slowMo=200&fullPage=true
-            </span>
-          </div>
+        <div className="bg-gray-100 px-4 sm:px-8 py-4 rounded mb-12 break-all">
+          例：https://scaas.vercel.app/api?url=https://example.com
+          <span className="text-red-600 font-bold">
+            &slowMo=200&fullPage=true
+          </span>
         </div>
       </div>
     </section>

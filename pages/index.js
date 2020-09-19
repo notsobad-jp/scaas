@@ -13,7 +13,7 @@ export default function Index() {
             <span className="ml-3 text-xl">ScaaS</span>
             <small className="text-xs">（スキャース）</small>
           </a>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="md:ml-auto hidden sm:flex flex-wrap items-center text-base justify-center">
             <a href="#feature" className="mr-5 hover:text-gray-900">特徴</a>
             <a href="#option" className="mr-5 hover:text-gray-900">使い方</a>
             <a href="#price" className="mr-5 hover:text-gray-900">料金</a>
@@ -24,17 +24,21 @@ export default function Index() {
 
       <section className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 pt-4 pb-0 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              スクリーンショットをシンプルに
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">
+              スクリーンショットを、シンプルに。
             </h1>
-            <p className="mb-4 leading-relaxed">
-              Scaas（スキャース）はライブラリ不要、URLのパラメータを指定するだけで使える、シンプル・便利なスクリーンショットAPIサービス（Screenshot as a Service）です。
+            <p className="mb-4 sm:mb-8 leading-relaxed">
+              <ruby>
+                ScaaS
+                <rp>(</rp><rt>スキャース</rt><rp>)</rp>
+              </ruby>
+              はライブラリ不要、URLのパラメータを指定するだけで使える、シンプルなスクリーンショットAPIサービスです。
               <br />
               縦長の画面でも全画面キャプチャ可能、また日本語フォントの表示にも対応しています。
             </p>
           </div>
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full">
             <img className="object-cover object-center rounded" alt="hero" src="/images/b0312.png" />
           </div>
         </div>
@@ -48,7 +52,7 @@ export default function Index() {
       <footer className="text-gray-700 body-font mt-24">
         <div className="bg-gray-200">
           <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Scaas -
+            <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 ScaaS -
               powered by
               <a href="https://notsobad.jp" className="text-gray-600 ml-1" target="_blank" rel="noopener noreferrer">NOT SO BAD, LLC.</a>
             </p>

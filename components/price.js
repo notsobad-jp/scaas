@@ -1,7 +1,7 @@
 export default function() {
   return (
     <section id="price" className="text-gray-700 body-font overflow-hidden">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 pt-8 sm:pt-24 pb-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">料金プラン</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">有料プランではより高度な機能を利用できます</p>

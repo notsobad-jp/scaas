@@ -1,9 +1,15 @@
 export default function() {
   return (
     <section id="feature" className="text-gray-700 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 pt-8 sm:pt-24 pb-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">Scaasの特徴</h1>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+            <ruby>
+              ScaaS
+              <rp>(</rp><rt>スキャース</rt><rp>)</rp>
+            </ruby>
+            の特徴
+          </h1>
         </div>
         <div className="flex flex-wrap -m-4">
           <div className="p-4 md:w-1/3">
@@ -16,7 +22,7 @@ export default function() {
               </div>
               <div className="flex-grow">
                 <p className="leading-relaxed text-base">
-                  ScaasはパラメータをつけたURLにアクセスするだけで画像を返す、超シンプルなサービスです。
+                  ScaaSはパラメータをつけたURLにアクセスするだけで画像を返す、超シンプルなサービスです。
                   ライブラリやAPIの面倒な設定も必要ありません。
                 </p>
               </div>
