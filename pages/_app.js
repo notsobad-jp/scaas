@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }) => {
         <meta property="og:locale" content="ja_JP" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content="Scaas(スキャース)は、URLを指定するだけで画面キャプチャを使えるシンプルなスクリーンショット作成サービスです" />
-        <meta name="twitter:image:src" content="https://scaas.vercel.app/images/ogp.png" />
+        <meta name="twitter:image:src" content="https://scaas.vercel.app/api?url=https://scaas.vercel.app&viewportWidth=1200&viewportHeight=600&maxAge=2592000" />
         <link rel="canonical" href="https://scaas.vercel.app" />
       </Head>
       <Component {...pageProps} />
