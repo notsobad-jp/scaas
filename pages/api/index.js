@@ -1,3 +1,5 @@
+import { GA_TRACKING_ID } from '../../lib/gtag'
+
 let chrome = {};
 let puppeteer = {};
 if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
@@ -14,6 +16,10 @@ export default async (req, res) => {
     return res.status(404).end();
   }
   const URL = req.query.url;
+
+  // Google Analytics
+  const gaPayload = {v: '1', tid: GA_TRACKING_ID, cid: '555', t: 'pageview', dl: encodeURIComponent(URL) };
+  fetch('http://www.google-analytics.com/collect', {method: 'post', body: gaPayload});
 
   // 各種パラメータ（指定なければデフォルト値）
   const slowMo = req.query.slowMo ? Number(req.query.slowMo) : 0;
