@@ -23,6 +23,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>Scaas - 簡単・便利なスクリーションショットAPIサービス</title>
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <meta name="description" content="Scaas(スキャース)は、URLを指定するだけで画面キャプチャを使えるシンプルなスクリーンショット作成サービスです" />
         <meta name="keywords" content="Scaas,スキャース,スクリーンショット,画面キャプチャ,縦長画面,日本語フォント,API" />
         <meta property="og:title" content="Scaas - 簡単・便利なスクリーションショットAPIサービス" />
