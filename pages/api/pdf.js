@@ -29,7 +29,7 @@ export default async (req, res) => {
   const viewportHeight = req.query.viewportHeight ? Number(req.query.viewportHeight) : 800;
 
   if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
-    await chrome.font('https://raw.githack.com/googlei18n/noto-cjk/master/NotoSansJP-Regular.otf');
+    await chrome.font('https://raw.githack.com/minoryorg/Noto-Sans-CJK-JP/master/fonts/NotoSansCJKjp-Medium.ttf');
   }
 
   const browser = await puppeteer.launch({
