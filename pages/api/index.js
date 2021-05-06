@@ -12,13 +12,10 @@ if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
 }
 
 export default async (req, res) => {
-  console.log("---------------")
-
   if(!req.query.url) {
     return res.status(404).end();
   }
   const URL = req.query.url;
-  console.log(URL)
 
   // Google Analytics
   const gaPayload = {v: '1', tid: GA_TRACKING_ID, cid: '555', t: 'pageview', dl: encodeURIComponent(URL) };
@@ -31,33 +28,32 @@ export default async (req, res) => {
   const viewportWidth = req.query.viewportWidth ? Number(req.query.viewportWidth) : 1200;
   const viewportHeight = req.query.viewportHeight ? Number(req.query.viewportHeight) : 800;
 
-  // if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
-  //   await chrome.font('https://raw.githack.com/googlei18n/noto-cjk/master/NotoSansJP-Regular.otf');
-  // }
-  return res.status(200).end("success");
-  //
-  // const browser = await puppeteer.launch({
-  //   slowMo: slowMo,
-  //   args: chrome.args,
-  //   executablePath: await chrome.executablePath,
-  //   headless: chrome.headless,
-  // });
-  // const page = await browser.newPage();
-  //
-  // await page.setViewport({
-  //   width: viewportWidth,
-  //   height: viewportHeight,
-  // });
-  // await page.goto(URL);
-  //
-  // const imgBinary = await page.screenshot({
-  //   encoding: 'binary',
-  //   fullPage: fullPage,
-  // });
-  // await browser.close();
-  //
-  // res.setHeader('Content-Type', 'image/png');
-  // res.setHeader('Content-Length', imgBinary.length);
-  // res.setHeader('Cache-Control', `public, s-maxage=${maxAge}, stale-while-revalidate`);
-  // res.end(imgBinary, "binary");
+  if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
+    await chrome.font('https://raw.githack.com/minoryorg/Noto-Sans-CJK-JP/master/fonts/NotoSansCJKjp-Medium.ttf');
+  }
+
+  const browser = await puppeteer.launch({
+    slowMo: slowMo,
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
+  });
+  const page = await browser.newPage();
+
+  await page.setViewport({
+    width: viewportWidth,
+    height: viewportHeight,
+  });
+  await page.goto(URL);
+
+  const imgBinary = await page.screenshot({
+    encoding: 'binary',
+    fullPage: fullPage,
+  });
+  await browser.close();
+
+  res.setHeader('Content-Type', 'image/png');
+  res.setHeader('Content-Length', imgBinary.length);
+  res.setHeader('Cache-Control', `public, s-maxage=${maxAge}, stale-while-revalidate`);
+  res.end(imgBinary, "binary");
 }
