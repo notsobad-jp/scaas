@@ -30,10 +30,10 @@ export default async (req, res) => {
   const maxAge = req.query.maxAge ? Number(req.query.maxAge) : 60*60*24;
   const viewportWidth = req.query.viewportWidth ? Number(req.query.viewportWidth) : 1200;
   const viewportHeight = req.query.viewportHeight ? Number(req.query.viewportHeight) : 800;
-  
-  if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
-    await chrome.font('https://raw.githack.com/googlei18n/noto-cjk/master/NotoSansJP-Regular.otf');
-  }
+
+  // if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
+  //   await chrome.font('https://raw.githack.com/googlei18n/noto-cjk/master/NotoSansJP-Regular.otf');
+  // }
   return res.status(200).end("success");
   //
   // const browser = await puppeteer.launch({
