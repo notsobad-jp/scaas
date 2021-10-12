@@ -1,4 +1,4 @@
-FROM node:10
+FROM --platform=linux/amd64 node:10
 
 # Setting working directory. All the path will be relative to WORKDIR
 RUN mkdir /web
