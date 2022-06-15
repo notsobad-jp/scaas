@@ -1,5 +1,3 @@
-import { GA_TRACKING_ID } from '../../lib/gtag'
-
 let chrome = {};
 let puppeteer = {};
 if(process.env.AWS_LAMBDA_FUNCTION_VERSION){
@@ -17,11 +15,8 @@ export default async (req, res) => {
   }
   const URL = req.query.url;
 
-  // Google Analytics
-  const gaPayload = {v: '1', tid: GA_TRACKING_ID, cid: '555', t: 'pageview', dl: encodeURIComponent(URL) };
-  fetch('http://www.google-analytics.com/collect', {method: 'post', body: gaPayload});
-
   // 各種パラメータ（指定なければデフォルト値）
+  const format = req.query.format == 'pdf' ? 'pdf' : 'image';
   const slowMo = req.query.slowMo ? Number(req.query.slowMo) : 0;
   const fullPage = (req.query.fullPage == 'true') ? true : false;
   const maxAge = req.query.maxAge ? Number(req.query.maxAge) : 60*60*24;
@@ -46,14 +41,27 @@ export default async (req, res) => {
   });
   await page.goto(URL);
 
-  const imgBinary = await page.screenshot({
-    encoding: 'binary',
-    fullPage: fullPage,
-  });
-  await browser.close();
 
-  res.setHeader('Content-Type', 'image/png');
-  res.setHeader('Content-Length', imgBinary.length);
-  res.setHeader('Cache-Control', `public, s-maxage=${maxAge}, stale-while-revalidate`);
-  res.end(imgBinary, "binary");
+  if(format == 'image') {
+    /* image */
+    const imgBinary = await page.screenshot({
+      encoding: 'binary',
+      fullPage: fullPage,
+    });
+    await browser.close();
+
+    res.setHeader('Content-Type', 'image/png');
+    res.setHeader('Content-Length', imgBinary.length);
+    res.setHeader('Cache-Control', `public, s-maxage=${maxAge}, stale-while-revalidate`);
+    res.end(imgBinary, "binary");
+  }else {
+    /* PDF */
+    const pdf = await page.pdf();
+    await browser.close();
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Length', pdf.length);
+    res.setHeader('Cache-Control', `public, s-maxage=${maxAge}, stale-while-revalidate`);
+    res.send(pdf);
+  }
 }
